@@ -1,0 +1,22 @@
+[build]
+command = "npm run build"
+publish = "dist"
+
+[build.environment]
+NODE_VERSION = "22"
+
+[functions]
+directory = "netlify/functions"
+node_bundler = "esbuild"
+
+# API routes must be listed BEFORE the catch-all SPA redirect below,
+# since Netlify uses the first matching rule.
+[[redirects]]
+from = "/api/*"
+to = "/.netlify/functions/:splat"
+status = 200
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
