@@ -139,7 +139,3 @@ export function saveHisCode(input: Omit<HisCode, "id" | "createdAt" | "updatedAt
     body: JSON.stringify(input),
   });
 }
-
-export function deleteHisCode(id: number) {
-  return request<{ ok: true }>(`his-codes?id=${id}`, { method: "DELETE" });
-}
