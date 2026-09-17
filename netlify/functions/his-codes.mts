@@ -45,16 +45,9 @@ export default async (req: Request) => {
       const [updated] = await db.update(hisCodes).set({ ...data, updatedAt: new Date() }).where(eq(hisCodes.id, id)).returning();
       return updated ? json(200, updated) : json(404, { error: "Código no encontrado." });
     } catch (error) {
-      if ((error as { code?: string }).code === "23505") return json(409, { error: "El código HIS ya existe." });
+      if ((error as { code?: string }).code === "23505") return json(409, { error: "El código CIE-10 / HIS ya existe." });
       throw error;
     }
-  }
-
-  if (req.method === "DELETE") {
-    const id = Number(new URL(req.url).searchParams.get("id"));
-    if (!Number.isInteger(id)) return json(400, { error: "Código inválido." });
-    const [deleted] = await db.delete(hisCodes).where(eq(hisCodes.id, id)).returning({ id: hisCodes.id });
-    return deleted ? json(200, { ok: true }) : json(404, { error: "Código no encontrado." });
   }
 
   return json(405, { error: "Método no permitido." });

@@ -941,7 +941,7 @@ export default function HIS({
           )}
           <button className="btn btn-primary btn-lg" onClick={addPatient}>➕ Agregar Paciente</button>
           <button className="btn btn-accent btn-lg" onClick={printHIS}>🖨️ Imprimir HIS</button>
-          <button className="btn btn-ghost btn-lg" onClick={onOpenCodes}>Códigos HIS</button>
+          <button className="btn btn-ghost btn-lg" onClick={onOpenCodes}>Catálogo CIE-10 / HIS</button>
           <button className="btn btn-ghost btn-lg his-account-btn" onClick={() => setProfileOpen(true)}>
             👤 {profileDraft.responsable || userEmail || "Mi perfil"}
           </button>

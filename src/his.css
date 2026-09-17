@@ -476,7 +476,7 @@ body {
 .admin-role-btn:hover { background: var(--teal); color: #fff; }
 .admin-tag { display: inline-block; margin-left: 8px; font-size: 10px; font-weight: 800; color: var(--teal); background: var(--teal-bg); padding: 2px 8px; border-radius: 10px; }
 
-/* Códigos HIS */
+/* Catálogo de diagnósticos CIE-10 / HIS */
 .codes-screen { min-height: 100vh; padding: 34px 20px 70px; background: radial-gradient(circle at 85% 4%, #dcefea 0, transparent 28%), #f3f1eb; color: var(--navy); }
 .codes-shell { max-width: 1120px; margin: 0 auto; }
 .codes-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; margin-bottom: 24px; }
@@ -489,6 +489,8 @@ body {
 .codes-grid { display: grid; grid-template-columns: 1fr 2fr 1.3fr 1fr; gap: 14px; margin-bottom: 18px; }
 .codes-search { display: grid; gap: 5px; min-width: min(360px, 50vw); font-weight: 800; font-size: 11px; text-transform: uppercase; letter-spacing: .05em; }
 .codes-search input { border: 1px solid var(--border); border-radius: 9px; padding: 10px 12px; font: inherit; text-transform: none; letter-spacing: normal; }
+.codes-description textarea { border: 2px solid var(--border); border-radius: 8px; padding: 10px 12px; font: inherit; resize: vertical; min-height: 82px; }
+.codes-description textarea:focus { outline: 2px solid color-mix(in srgb, var(--teal) 28%, transparent); border-color: var(--teal); }
 .codes-table td:first-child { color: var(--teal); font-family: ui-monospace, monospace; letter-spacing: .03em; }
 .code-status { display: inline-flex; border-radius: 999px; padding: 5px 10px; font-size: 11px; font-weight: 900; }
 .code-status.active { background: #def2e7; color: #1b7046; }
